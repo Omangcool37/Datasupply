@@ -80,14 +80,6 @@ VALUES (4, 'FAVOR SMITH', 7500, '2025-03-20', '2025-09-20');
 INSERT INTO contract (employee_id, client, amount, contract_date, completion_date)
 VALUES (8, 'EZEKIEL CARY', 3500, '2025-03-20', '2025-09-20');
 
-UPDATE contract
-SET contract_id = 4 
-WHERE client = 'RENEE PALMETER';
-
-UPDATE contract 
-SET contract_id = 5 
-WHERE client = 'MARY SHIELDS';
-
 UPDATE contract 
 SET contract_id = 6 
 WHERE client = 'JUSTIN ARNOLD';
@@ -97,8 +89,17 @@ SET contract_id = 7
 WHERE client = 'FAVOR SMITH';
 
 UPDATE contract 
+SET contract_id = 5 
+WHERE client = 'MARY SHIELDS';
+
+UPDATE contract 
 SET contract_id = 8 
 WHERE client = 'EZEKIEL CARY';
+
+UPDATE contract
+SET contract_id = 4 
+WHERE client = 'RENEE PALMETER';
+
 
 INSERT INTO transaction (employee_id, products_sold, amount, transaction_date)
 VALUES (3, 4, 117.45, '2025-03-17 11:25:13');
