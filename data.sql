@@ -137,18 +137,29 @@ VALUES (7, 1, 39.82, '2025-03-18 11:49:51');
 INSERT INTO transaction (employee_id, products_sold, amount, transaction_date)
 VALUES (7, 6, 212.56, '2025-03-18 12:30:27');
 
--- CHALLENGE 1
+---CHALLENGES
+--1
 select first_name, last_name
 from employee
 where date_created < '2020-12-31';
 
---CHALLENGE 2
+-- 2
 select first_name, last_name
 from employee 
 where dept_id = 2;
 
---CHALLENGE 3
+-- 3
 select first_name, last_name 
 from employee
 where salary < 80000 AND salary > 40000;
+
+--4 
+select sum(products_sold) products
+from transaction;
+
+-- 5 
+select e.employee_id, e.first_name, e.last_name, SUM(t.products_sold) AS total_products_sold
+from employee e
+join transaction t ON e.employee_id = t.employee_id
+group by e.employee_id, e.first_name, e.last_name;
 
